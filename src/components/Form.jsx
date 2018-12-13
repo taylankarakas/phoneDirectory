@@ -28,7 +28,9 @@ class Form extends React.Component {
 
     onSubmit (e) {
         e.preventDefault();
-        this.props.addContact(this.state);
+        if (this.state.name !== '' || this.state.phone !== '') {
+            this.props.addContact(this.state);
+        }
         this.setState({
             name : '',
             phone : ''
